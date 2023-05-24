@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap');
+
+:root {
+	--red: hsl(0, 93%, 68%);
+	--red-light: hsl(0, 36%, 70%);
+	--dark: hsl(0, 6%, 24%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0%;
+	padding: 0%;
+}
+
+body {
+	background: url('./images/bg-pattern-desktop.svg'),
+		linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	font-family: 'Josefin Sans', sans-serif;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+}
+
+.logo-desktop,
+.hero-desktop {
+	display: none;
+}
+.logo-mobile {
+	order: -1;
+	margin: 2em;
+}
+
+.image-container {
+	order: 0;
+}
+
+.image-container img {
+	width: 100%;
+}
+
+main {
+	order: 2;
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3rem;
+	letter-spacing: 10px;
+}
+
+span {
+	display: block;
+}
+
+.col-red {
+	color: var(--red-light);
+	font-weight: 300;
+}
+
+main p {
+	color: var(--red-light);
+	font-size: 1.2em;
+	margin: 1em 0;
+	line-height: 1.2;
+}
+
+.input-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+input {
+	padding: 1.5em 1.2em;
+	width: 90%;
+	border-radius: 30px;
+	border: 1px solid var(--dark);
+}
+
+input::placeholder {
+	color: var(--red-light);
+}
+
+#error {
+	position: absolute;
+	right: 30%;
+	display: none;
+}
+
+.error-message {
+	display: none;
+}
+
+button {
+	padding: 1.3em 2.5em;
+	border-radius: 30px;
+	background-color: var(--red-light);
+	border: none;
+	outline: none;
+	position: absolute;
+	right: 10%;
+}
+
+form p {
+	color: var(--red);
+	text-align: start;
+	margin: 0;
+}
+
+footer {
+	order: 100;
+}
+
+@media (min-width: 768px) {
+	body {
+		height: 100vh;
+		flex-direction: row;
+	}
+	.logo-desktop,
+	.hero-desktop {
+		display: block;
+	}
+	.logo-mobile,
+	.hero-mobile {
+		display: none;
+	}
+
+	.logo-desktop {
+		padding: 2em 0 7em 0;
+	}
+
+	.image-container img {
+		height: 100%;
+	}
+
+	main {
+		order: -1;
+		width: 50%;
+		text-align: start;
+	}
+
+	h1 {
+		letter-spacing: 15px;
+		font-size: 4em;
+	}
+
+	main p {
+		padding: 0.5em 0;
+		font-size: 1.5em;
+	}
+
+	.logo-desktop,
+	.article,
+	form {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
